@@ -1,0 +1,52 @@
+:root {
+  --object-color: #d0a940;
+  --text-color: #581713;
+  --font-for-little: "Julee", cursive;
+  --font-for-uppercase: "Jim Nightshade", cursive;
+}
+input::placeholder {
+  font-family: var(--font-for-little);
+  color: var(--text-color) !important;
+  opacity: 0.8 !important;
+}
+
+placeholder:hover {
+  color: var(--object-color) !important;
+}
+.cityButton {
+  background-color: var(--object-color) !important;
+}
+.cityInput,
+.cityButton {
+  border-color: var(--object-color) !important;
+}
+.header-small {
+  font-family: var(--font-for-little);
+}
+.header-uppercase,
+.header-uppercase-second {
+  font-family: var(--font-for-uppercase);
+  font-size: 32px;
+  color: var(--text-color);
+}
+.header-uppercase-second {
+  font-size: 20px;
+}
+
+.week-weather {
+  padding-top: 130px;
+  padding-left: 160px;
+}
+.week-icon-style {
+  width: 47px !important;
+  height: 46px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  font-family: var(--font-for-little);
+  color: var(--text-color);
+}
+.weather-icon {
+  width: 50px;
+}
