@@ -9,12 +9,14 @@ input::placeholder {
   color: var(--text-color) !important;
   opacity: 0.8 !important;
 }
-
-placeholder:hover {
-  color: var(--object-color) !important;
+.Weather {
+  padding-top: 25px;
 }
 .cityButton {
   background-color: var(--object-color) !important;
+  color: var(--text-color);
+  font-family: var(--font-for-uppercase);
+  font-size: 20px;
 }
 .cityInput,
 .cityButton {
@@ -22,12 +24,12 @@ placeholder:hover {
 }
 .header-small {
   font-family: var(--font-for-little);
+  font-size: 20px;
 }
 .header-uppercase,
 .header-uppercase-second {
   font-family: var(--font-for-uppercase);
   font-size: 32px;
-  color: var(--text-color);
 }
 .header-uppercase-second {
   font-size: 20px;
@@ -49,4 +51,12 @@ placeholder:hover {
 }
 .weather-icon {
   width: 50px;
+}
+
+.temperature {
+  font-size: 62px;
+}
+.unit {
+  position: relative;
+  top: -25px;
 }

@@ -1,7 +1,15 @@
+:root {
+  --object-color: #d0a940;
+  --text-color: #581713;
+  --font-for-little: "Julee", cursive;
+  --font-for-uppercase: "Jim Nightshade", cursive;
+}
+
 .App {
   max-width: 960px;
   max-height: 540px;
   margin: 20px 0px 0px 20px;
+  color: var(--text-color);
 }
 
 .bgContainer {
