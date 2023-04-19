@@ -30,6 +30,7 @@ input::placeholder {
 .header-uppercase-second {
   font-family: var(--font-for-uppercase);
   font-size: 32px;
+  text-transform: uppercase;
 }
 .header-uppercase-second {
   font-size: 20px;
@@ -59,4 +60,7 @@ input::placeholder {
 .unit {
   position: relative;
   top: -25px;
+}
+.weatherDescrip {
+  letter-spacing: 10px;
 }
