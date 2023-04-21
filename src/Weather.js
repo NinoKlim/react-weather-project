@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import CurrentDate from "./CurrentDate";
 
 const Weather = () => {
   // const [city, setCity] = useState({});
@@ -26,14 +27,17 @@ const Weather = () => {
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].main,
+      date: new Date(response.data.dt * 1000),
     });
   }
-  if (loaded) {
+  if (weatherData.success) {
     return (
       <div className="Weather">
         <div className="row pb-3">
-          <div className="col-4 ">
-            <div className="pb-3 header-small">Tuesday, 11.04.2023</div>
+          <div className="col-sm-3 ">
+            <div className="pb-2 header-small date-style">
+              <CurrentDate date={weatherData.date} />
+            </div>
             <div className="pb-3 header-uppercase">
               {" "}
               {weatherData.city},{" "}
@@ -42,7 +46,7 @@ const Weather = () => {
               </span>
             </div>
           </div>
-          <div className="col-3 header-small d-flex align-items-center justify-content-evenly ">
+          <div className="col-sm-3 header-small d-flex align-items-center justify-content-evenly ">
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
               alt="weather"
@@ -56,7 +60,7 @@ const Weather = () => {
               <span className="unit">°С</span>{" "}
             </div>
           </div>
-          <div className="col-4 align-self-center">
+          <div className="col-sm-4 ps-4 align-self-center">
             <div className="col-sm header-small weatherDescrip">
               {weatherData.description}
             </div>
@@ -73,7 +77,7 @@ const Weather = () => {
         </div>
 
         <div className="row">
-          <div className="col-6">
+          <div className="col-sm-6">
             <div className="input-group">
               <input
                 type="text"
@@ -105,9 +109,18 @@ const Weather = () => {
       </div>
     );
   } else {
-    const ApiKey = "017d56650cd168d68067850318775d43";
-    const ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Sevastopol&appid=${ApiKey}&units=metric`;
-    axios.get(ApiUrl).then(handleSubmit);
+    const apiToken = "cd734928f9329a";
+    const apiTokenUrl = `https://ipinfo.io/json?token=${apiToken}`;
+    axios.get(apiTokenUrl).then(getWeather);
+
+    function getWeather(cityValue) {
+      defaultCity(cityValue.data.city);
+    }
+    function defaultCity(cityValue) {
+      const ApiKey = "017d56650cd168d68067850318775d43";
+      const ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${ApiKey}&units=metric`;
+      axios.get(ApiUrl).then(handleSubmit);
+    }
     return "Loaded..";
   }
 };

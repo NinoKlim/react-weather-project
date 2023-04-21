@@ -9,6 +9,13 @@ input::placeholder {
   color: var(--text-color) !important;
   opacity: 0.8 !important;
 }
+.bgContainer {
+  background-image: url("/public/weather_fon7.jpeg");
+
+  background-repeat: no-repeat;
+  padding: 60px 20px 20px 40px !important;
+}
+
 .Weather {
   padding-top: 25px;
 }
@@ -63,4 +70,11 @@ input::placeholder {
 }
 .weatherDescrip {
   letter-spacing: 10px;
+  color: #e5645f;
+}
+
+.date-style {
+  color: #e5645f;
+  /* color: #8ddc8a; */
+  /* color: #55a2e7; */
 }
