@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
+import WeatherIcon from "./WeatherIcon";
 
 const WeatherData = (props) => {
   return (
@@ -19,11 +20,9 @@ const WeatherData = (props) => {
             </div>
           </div>
           <div className="col-sm-3 header-small d-flex align-items-center justify-content-evenly ">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-              alt="weather"
-              className="weather-icon"
-            ></img>
+            <div className="weather-icon">
+              <WeatherIcon code={props.data.icon} />
+            </div>
             <div>
               <span className="temperature">
                 {" "}

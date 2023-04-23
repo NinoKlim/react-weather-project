@@ -33,6 +33,7 @@ const Weather = () => {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
+      // "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
       description: response.data.weather[0].main,
       date: new Date(response.data.dt * 1000),
     });
