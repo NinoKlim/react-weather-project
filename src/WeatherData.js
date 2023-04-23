@@ -1,6 +1,7 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
 import WeatherIcon from "./WeatherIcon";
+import TemperatureUnit from "./TemperatureUnit";
 
 const WeatherData = (props) => {
   return (
@@ -19,16 +20,12 @@ const WeatherData = (props) => {
               </span>
             </div>
           </div>
-          <div className="col-sm-3 header-small d-flex align-items-center justify-content-evenly ">
+          <div className="col-sm-3  d-flex align-items-center justify-content-evenly ">
             <div className="weather-icon">
               <WeatherIcon code={props.data.icon} />
             </div>
-            <div>
-              <span className="temperature">
-                {" "}
-                {Math.round(props.data.temperature)}{" "}
-              </span>
-              <span className="unit">°С</span>{" "}
+            <div className="header-small">
+              <TemperatureUnit metric={props.data.temperature} />
             </div>
           </div>
           <div className="col-sm-4 ps-4 align-self-center">

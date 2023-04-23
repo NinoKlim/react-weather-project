@@ -58,7 +58,7 @@ input::placeholder {
   color: var(--text-color);
 }
 .weather-icon {
-  width: 50px;
+  padding-right: 10px;
 }
 
 .temperature {
