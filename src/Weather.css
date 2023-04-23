@@ -58,6 +58,7 @@ input::placeholder {
   color: var(--text-color);
 }
 .weather-icon {
+  padding-top: 10px;
   padding-right: 10px;
 }
 
