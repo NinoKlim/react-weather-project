@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import "./App.css";
 import Weather from "./Weather";
+import axios from "axios";
 
 function App() {
   // const apiToken = "cd734928f9329a";
@@ -7,7 +9,7 @@ function App() {
   // axios.get(apiTokenUrl).then(getWeather);
 
   // function getWeather(cityValue) {
-  //   setCity({ city: cityValue.data.city });
+  //   defaultCity(cityValue.target.value);
   // }
   return (
     <div className="App">
