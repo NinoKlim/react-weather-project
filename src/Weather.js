@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import WeatherData from "./WeatherData";
+import ForecastForWeek from "./ForecastForWeek";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState({ success: false });
@@ -26,6 +27,7 @@ const Weather = () => {
   function handleResponse(response) {
     console.log(response);
     setWeatherData({
+      coordinates: response.data.coord,
       success: true,
       temperature: response.data.main.temp,
       city: response.data.name,
@@ -72,16 +74,7 @@ const Weather = () => {
             </div>
           </div>
         </form>
-        {/* 
-        <div className="row d-flex justify-content-evenly week-weather">
-          <div className="col-1 week-icon-style">Mn</div>
-          <div className="col-1 week-icon-style">Tu</div>
-          <div className="col-1 week-icon-style">Wd</div>
-          <div className="col-1 week-icon-style">Th</div>
-          <div className="col-1 week-icon-style">Fra</div>
-          <div className="col-1 week-icon-style">Sa</div>
-          <div className="col-1 week-icon-style">Sn</div>
-        </div> */}
+        <ForecastForWeek coords={weatherData.coordinates} />
       </div>
     );
   } else {
