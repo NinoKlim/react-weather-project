@@ -1,0 +1,11 @@
+.night-temp {
+  /* color: black; */
+  opacity: 0.8;
+}
+.week-icon-style {
+  padding: 10px;
+  width: 47px !important;
+  height: 46px;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+}

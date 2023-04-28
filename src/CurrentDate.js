@@ -11,13 +11,13 @@ const CurrentDate = (props) => {
     "Friday",
     "Saturday",
   ];
-  let day = days[props.date.getDay()];
-  let month = props.date.getMonth() + 1;
+  let day = days[props.dataDate.getDay()];
+  let month = props.dataDate.getMonth() + 1;
   if (month < 10) {
     month = `0${month}`;
   }
-  let date = props.date.getDate();
-  let year = props.date.getFullYear();
+  let date = props.dataDate.getDate();
+  let year = props.dataDate.getFullYear();
   return (
     <div>
       {day}, {date}.{month}.{year}

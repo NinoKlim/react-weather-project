@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import WeatherData from "./WeatherData";
 import ForecastForWeek from "./ForecastForWeek";
+// import ForecastDay from "./ForecastDay";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState({ success: false });
@@ -50,7 +51,8 @@ const Weather = () => {
   if (weatherData.success) {
     return (
       <div>
-        <WeatherData data={weatherData} />
+        <WeatherData dataWeather={weatherData} />
+        {/* <ForecastDay curDay={weatherData.date} /> */}
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-sm-6">
