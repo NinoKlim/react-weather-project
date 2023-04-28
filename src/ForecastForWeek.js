@@ -8,7 +8,6 @@ const ForecastForWeek = (props) => {
   const [loaded, setLoded] = useState(false);
   const [dailyForecast, setDailyForecast] = useState(null);
   function showWeekForecast(response) {
-    console.log(response);
     setLoded(true);
     setDailyForecast(response.data.daily);
   }
@@ -28,6 +27,8 @@ const ForecastForWeek = (props) => {
                   <ForecastDay dayData={forecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
