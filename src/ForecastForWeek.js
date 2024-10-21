@@ -37,8 +37,8 @@ const ForecastForWeek = (props) => {
   } else {
     let lat = props.coords.lat;
     let lon = props.coords.lon;
-    const ApiKey = "001bc651977f4b024af4d84282b0f02a";
-    const ApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${ApiKey}&units=metric`;
+    let ApiKey = `017d56650cd168d68067850318775d43`;
+    let ApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${ApiKey}&units=metric`;
     axios.get(ApiUrl).then(showWeekForecast);
     return null;
   }

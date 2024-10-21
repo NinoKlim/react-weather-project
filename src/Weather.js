@@ -10,14 +10,16 @@ const Weather = () => {
   const [city, setCity] = useState();
 
   function currentCity() {
-    const apiToken = "cd734928f9329a";
-    const apiTokenUrl = `https://ipinfo.io/json?token=${apiToken}`;
-    axios.get(apiTokenUrl).then(getWeather);
+    let currentCity = "Paris";
+    searchCity(currentCity);
+    // const apiToken = "cd734928f9329a";
+    // const apiTokenUrl = `https://ipinfo.io/json?token=${apiToken}`;
+    // axios.get(apiTokenUrl).then(getWeather);
   }
 
-  function getWeather(cityValue) {
-    searchCity(cityValue.data.city);
-  }
+  // function getWeather(cityValue) {
+  //   searchCity(cityValue.data.city);
+  // }
 
   function searchCity(city) {
     const ApiKey = "017d56650cd168d68067850318775d43";
